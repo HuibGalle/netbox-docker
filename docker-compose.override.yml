@@ -1,7 +1,15 @@
 services:
   netbox:
+    image: netbox:latest-plugins
+    pull_policy: never
     ports:
     - 38001:8080
+    build:
+      context: .
+      dockerfile: Dockerfile-Plugins
+  netbox-worker:
+    image: netbox:latest-plugins
+    pull_policy: never
     volumes:
     - /mnt/data-apps/apps/netbox2:/etc/netbox/config:z,ro
     - netbox-media-files:/opt/netbox/netbox/media:z,rw
