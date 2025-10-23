@@ -1,4 +1,8 @@
-PLUGINS = ["netbox_secretstore"]
+PLUGINS = [
+    "netbox_secretstore"
+    "slurpit_netbox"
+    "netbox_topology_views"
+]
 
  PLUGINS_CONFIG = {
    "netbox_secretstore": {
