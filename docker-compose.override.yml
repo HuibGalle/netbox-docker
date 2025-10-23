@@ -7,9 +7,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-Plugins
-  netbox-worker:
-    image: netbox:latest-plugins
-    pull_policy: never
     volumes:
     - /mnt/data-apps/apps/netbox2:/etc/netbox/config:z,ro
     - netbox-media-files:/opt/netbox/netbox/media:z,rw
@@ -18,6 +15,8 @@ services:
     healthcheck:
       retries: 15
   netbox-worker:
+    image: netbox:latest-plugins
+    pull_policy: never
     volumes:
     - /mnt/data-apps/apps/netbox2:/etc/netbox/config:z,ro
     - netbox-media-files:/opt/netbox/netbox/media:z,rw
