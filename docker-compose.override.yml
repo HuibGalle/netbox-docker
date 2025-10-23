@@ -6,7 +6,7 @@ services:
     - 38001:8080
     build:
       context: .
-      dockerfile: Dockerfile-Plugins
+      dockerfile: dockerfile-Plugins
     volumes:
     - /mnt/data-apps/apps/netbox2:/etc/netbox/config:z,ro
     - netbox-media-files:/opt/netbox/netbox/media:z,rw
